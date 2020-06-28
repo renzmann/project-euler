@@ -1,5 +1,7 @@
 # What is the largest palindrome that is the product of two three-digit numbers?
 
+using BenchmarkTools
+
 function isPalindrome(n)
     numString = string(n)
     numString == reverse(numString)
@@ -28,4 +30,17 @@ function findLargestPalindrome()
     largestPalindrome
 end
 
-println(findLargestPalindrome())
+println("Answer:", findLargestPalindrome())
+@benchmark findLargestPalindrome()
+# Answer:906609
+# BenchmarkTools.Trial: 
+#   memory estimate:  403.13 KiB
+#   allocs estimate:  9675
+#   --------------
+#   minimum time:     167.059 μs (0.00% GC)
+#   median time:      169.959 μs (0.00% GC)
+#   mean time:        180.929 μs (3.29% GC)
+#   maximum time:     1.091 ms (74.42% GC)
+#   --------------
+#   samples:          10000
+#   evals/sample:     1
