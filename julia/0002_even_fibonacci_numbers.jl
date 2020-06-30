@@ -1,19 +1,26 @@
 # Problem 2: Find the sum of the even valued fibonacci numbers below four million
 
 using BenchmarkTools
+using Formatting
+
+
+function notEven(n)
+    Bool(thisIter % 2)
+end
+
 
 function sumEvenFibonacci(lastIter, thisIter, total, terminate=4*10^6)
     if thisIter >= terminate
         return total
-    elseif Bool(thisIter % 2)  # This number is *not* divisible by 2
+    elseif notEven(thisIter)
         return sumEvenFibonacci(thisIter, lastIter + thisIter, total, terminate)
-    else  # This number *is* divisible by 2
-        return sumEvenFibonacci(thisIter, lastIter + thisIter, total + thisIter,
-                                terminate)
+    else
+        return sumEvenFibonacci(thisIter, lastIter + thisIter, total + thisIter, terminate)
     end
 end
 
-println("Answer:", sumEvenFibonacci(1, 1, 0))
+
+println("Answer: ", format(sumEvenFibonacci(1, 1, 0), commas=true))
 @benchmark sumEvenFibonacci(1, 1, 0)
 # Answer:4613732
 # BenchmarkTools.Trial: 
@@ -27,4 +34,3 @@ println("Answer:", sumEvenFibonacci(1, 1, 0))
 #   --------------
 #   samples:          10000
 #   evals/sample:     968
-
