@@ -2,6 +2,8 @@
 
 using BenchmarkTools
 
+thenumber = 600851475143
+
 function firstDivisor(m::Int, iter::Int)
     if (m % iter == 0)
         return iter
@@ -18,8 +20,8 @@ function findLargestPrimeFactor(n::Int)
     findLargestPrimeFactor(Int(n / firstFactor))
 end
 
-println("Answer:", findLargestPrimeFactor(600851475143))
-@benchmark findLargestPrimeFactor(600851475143)
+println("Answer:", findLargestPrimeFactor(thenumber))
+@benchmark findLargestPrimeFactor(thenumber)
 # Answer:6857
 # BenchmarkTools.Trial: 
 #   memory estimate:  0 bytes
