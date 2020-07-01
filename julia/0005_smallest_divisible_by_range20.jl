@@ -6,14 +6,8 @@
  power seen in the above list. The answer is the product of these.
 =#
 
-try
-    using Formatting
-catch
-    import Pkg; Pkg.add("Formatting")
-    using Formatting
-finally
-    using Formatting
-end
+using Formatting
+
 
 ans = 2^4 * 3^2 * 5 * 7 * 11 * 13 * 17 * 19
 println("Answer:", format(ans, commas=true))

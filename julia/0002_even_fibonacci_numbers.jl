@@ -5,7 +5,7 @@ using Formatting
 
 
 function notEven(n)
-    Bool(thisIter % 2)
+    Bool(n % 2)
 end
 
 

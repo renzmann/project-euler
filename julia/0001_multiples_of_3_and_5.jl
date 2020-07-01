@@ -1,5 +1,8 @@
 # Problem 1: Find the sum of all the multiples of 3 or 5 below 1000
 
+using BenchmarkTools
+
+
 function calctotal()
 
     total = 0
@@ -12,6 +15,7 @@ function calctotal()
 
     total
 end
+
 
 println("Answer:", calctotal())
 @benchmark calctotal()
