@@ -34,7 +34,7 @@ end
 
 println("Answer: ", format(findLargestPalindrome(), commas=true))
 @benchmark findLargestPalindrome()
-# Answer:906609
+# Answer: 906,609
 # BenchmarkTools.Trial: 
 #   memory estimate:  403.13 KiB
 #   allocs estimate:  9675
