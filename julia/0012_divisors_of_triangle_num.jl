@@ -13,17 +13,13 @@ using BenchmarkTools
 using Formatting
 
 
-"""
-The maximum that any factor of a number can be is its square root.
-We define this guy to simplify our for loops when checking for
-factors
-"""
+"When checking for prime-ness, we only need to iterate up to √x"
 function maxfactor(x)
     Int(ceil(√(x)))
 end
 
 
-"Shouldn't need an explanation for this one."
+"Shouldn't need an explanation for this one"
 function isprime(x)
     if x == 2
         return true
@@ -36,7 +32,7 @@ function isprime(x)
     end
     true
 end
-1
+
 
 "Recursively find the number of times i divides into m"
 function getexponent(i, m, acc)
