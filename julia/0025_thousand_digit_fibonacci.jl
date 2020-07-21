@@ -21,4 +21,17 @@ end
 
 
 println("Answer: ", find())
-# @benchmark find()
+@benchmark find()
+#=
+BenchmarkTools.Trial:
+  memory estimate:  1.15 MiB
+  allocs estimate:  9583
+  --------------
+  minimum time:     360.100 μs (0.00% GC)
+  median time:      431.399 μs (0.00% GC)
+  mean time:        1.163 ms (21.37% GC)
+  maximum time:     118.472 ms (83.11% GC)
+  --------------
+  samples:          4290
+  evals/sample:     1
+=#
