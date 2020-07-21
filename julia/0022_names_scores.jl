@@ -1,4 +1,4 @@
-#= 
+#=
 Problem 22: Using names.txt (right click and 'Save Link/Target
             As...'), a 46K text file containing over five-thousand first names,
             begin by sorting it into alphabetical order. Then working out the
@@ -22,7 +22,7 @@ end
 
 
 function find()
-    names = readdlm("../p022_names.txt", ',', String)
+    names = readdlm("../data/p022_names.txt", ',', String)
     sort!(names; dims=2)
     sum(i * score(name) for (i, name) in enumerate(names))
 end
@@ -31,7 +31,7 @@ end
 println("Answer: ", format(find(), commas=true))
 @benchmark find()
 #=
-BenchmarkTools.Trial: 
+BenchmarkTools.Trial:
   memory estimate:  818.17 KiB
   allocs estimate:  20086
   --------------
